@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WardrobeProjectWeek.Models.Tops>
+
+@{
+    ViewBag.Title = "Tops";
+}
+
+<h2>Tops</h2>
+
+<div class="container">
+    <div class="row">
+        <!--Loop for each item in the database-->
+        @foreach (var item in Model) {
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a class="thumbnail">
+                        <img src=@Html.DisplayFor(modelItem => item.Photo) alt=@Html.DisplayFor(modelItem => item.Nickname)>
+                    </a>
+                    <div class="caption">
+                        <h3>@Html.DisplayFor(modelItem => item.Nickname) <span class="badge">@Html.DisplayFor(modelItem => item.TopsID)</span></h3>
+                        <p>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(modelItem => item.Type)</p>
+                        <p>@Html.DisplayNameFor(model => model.Color): @Html.DisplayFor(modelItem => item.Color)</p>
+                        <p>@Html.DisplayNameFor(model => model.Season): @Html.DisplayFor(modelItem => item.Season)</p>
+                        <p>@Html.DisplayNameFor(model => model.Occasion): @Html.DisplayFor(modelItem => item.Occasion)</p>
+                        <!-- Single button for options navigation -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Options <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Edit", "Edit", new { id = item.TopsID })</li>
+                                <li>@Html.ActionLink("Delete", "Delete", new { id = item.TopsID })</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <!--Thumbnail for creating a new database entry-->
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a href=@Url.Action("Create", "Tops") class="thumbnail" id="add">
+                    <img src="~/Images/ic_add_circle_black_24dp_2x.png" />
+                </a>
+                <div class="caption">
+                    <h3>Add a Top!</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

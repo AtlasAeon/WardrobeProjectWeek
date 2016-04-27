@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "ClosetSoft";
+}
+
+<div class="jumbotron">
+    <div id="backcolor">
+        <h1>ClosetSoft</h1>
+        <p class="lead">What's in your closet?</p>
+    </div>
+</div>
+<!--Links to the clothing categories-->
+<div class="row">
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <a href=@Url.Action("Index","Tops") class="thumbnail home">
+                <img src="http://goo.gl/CYskT7" />
+            </a>
+            <div class="caption">
+                <h3>View your tops!</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <a href=@Url.Action("Index","Bottoms") class="thumbnail home">
+                <img src="http://goo.gl/N9oTbR" />
+            </a>
+            <div class="caption">
+                <h3>View your bottoms!</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <a href=@Url.Action("Index","Shoes") class="thumbnail home">
+                <img src="http://goo.gl/rgrV8Q" />
+            </a>
+            <div class="caption">
+                <h3>View your shoes!</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <a href=@Url.Action("Index","Accessories") class="thumbnail home">
+                <img src="http://goo.gl/NBcbm8" />
+            </a>
+            <div class="caption">
+                <h3>View your accessories!</h3>
+            </div>
+        </div>
+    </div>
+</div>
